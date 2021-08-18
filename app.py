@@ -30,21 +30,6 @@ def predict():
     data14 = request.form['n']
     features_to_keep = ["Occurrence_Year", "Occurrence_Month", "Occurrence_Hour", "Bike_Speed", "Cost_of_Bike", "Longitude", "Latitude", "Primary_Offence", "Division", "Location_Type", "Bike_Make", "Bike_Type", "Bike_Colour","NeighbourhoodName"]
     arr = pd.DataFrame([[data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14]], columns=features_to_keep)
-    print("Array data",data1)
-    print("Array data",data2)
-    print("Array data",data3)
-    print("Array data",data4)
-    print("Array data",data5)
-    print("Array data",data6)
-    print("Array data",data7)
-    print("Array data",data8)
-    print("Array data",data9)
-    print("Array data",data10)
-    print("Array data",data11)
-    print("Array data",data12)
-    print("Array data",data13)
-    print("Array data",data14)
-
     prediction = model.predict(arr)
     print("\nPrediction\n",prediction)
     if prediction[0] == 0:
